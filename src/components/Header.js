@@ -16,17 +16,6 @@ const Header = () => {
           blank subcategories that dive deeper into areas that are defined in the Primary entries.
         </p>
       </div>
-      <div>
-        <p>Sort by:</p>
-        <ul>
-          <li>
-            <button>Category</button>
-          </li>
-          <li>
-            <button>Subject</button>
-          </li>
-        </ul>
-      </div>
     </header>
   )
 }
