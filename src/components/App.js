@@ -9,9 +9,7 @@ const App = () => {
   const [bySubjectEntries, setBySubjectEntries] = useState([])
   // const [byCategoryEntries, setByCategoryEntries] = useState([])
 
-  // display ALL entries in alphabetical order
-
-  // TODO: Divide all entries and categorize by subject
+  // Divide all entries and categorize by subject
   const organizeEntries = (entries, listOfSubjects) => {
     const updatedSubjects = listOfSubjects.map(subject => {
       const subjectId = subject.id
@@ -34,6 +32,7 @@ const App = () => {
     fetch("http://localhost:5500/api/entries/all")
       .then(res => res.json())
       .then(data => {
+        // console.log(data)
         organizeEntries(data, subjects)
       })
       .catch(err => console.log(err.message))
@@ -43,7 +42,7 @@ const App = () => {
     <div>
       <Header />
       <Search />
-      <Entries allEntries={allEntries} bySubjectEntries={bySubjectEntries} />
+      <Entries allEntries={allEntries} subjects={bySubjectEntries} />
     </div>
   )
 }
