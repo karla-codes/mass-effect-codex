@@ -3,7 +3,7 @@ import React from "react"
 const Header = () => {
   return (
     <header>
-      <div>
+      <div className="wrapper">
         <h1>Mass Effect Codex</h1>
         <p>
           Welcome to my Mass Effect Codex project! Here you’ll find codex entries from all three
