@@ -32,8 +32,18 @@ const App = () => {
     fetch("http://localhost:5500/api/entries/all")
       .then(res => res.json())
       .then(data => {
-        // console.log(data)
-        organizeEntries(data, subjects)
+        const sortedData = data.sort((a, b) => {
+          if (a.title < b.title) {
+            return -1
+          }
+
+          if (a.title > b.title) {
+            return 1
+          }
+
+          return 0
+        })
+        organizeEntries(sortedData, subjects)
       })
       .catch(err => console.log(err.message))
   }, [])
