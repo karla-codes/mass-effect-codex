@@ -2,7 +2,7 @@ import React from "react"
 
 const Search = () => {
   return (
-    <div>
+    <div className="search">
       <p>This is where the Search filters will go.</p>
     </div>
   )
