@@ -4,21 +4,23 @@ const EntryCard = props => {
   const { entries } = props
   const { updatedEntries } = props
 
-  // console.log(entries)
-
   const createCard = () => {
     if (updatedEntries.length === 0) {
-      return entries.map(entry => {
-        return (
-          <div key={entry._id}>
-            <h2>{entry.title}</h2>
-            {/* <div>{entry.content.map(item => item)}</div> */}
-            <p>
-              {entry.subject.name} | {entry.category.name}
-            </p>
-          </div>
-        )
-      })
+      return (
+        <div className="codex-entries">
+          {entries.map(entry => {
+            return (
+              <div key={entry._id} className="codex-entry">
+                <h2>{entry.title}</h2>
+                {/* <div>{entry.content.map(item => item)}</div> */}
+                <p>
+                  {entry.subject.name} | {entry.category.name}
+                </p>
+              </div>
+            )
+          })}
+        </div>
+      )
     } else if (updatedEntries.length === 2) {
       if (updatedEntries[0][0].category.name === "Primary") {
         const primary = updatedEntries[0]
@@ -26,12 +28,12 @@ const EntryCard = props => {
 
         return (
           <>
-            <section className="primary">
-              <h2>Primary</h2>
-              <div className="cards">
+            <section className="codex-primary">
+              <h2 className="titles">Primary</h2>
+              <div className="codex-entries">
                 {primary.map(entry => {
                   return (
-                    <div key={entry._id}>
+                    <div key={entry._id} className="codex-entry">
                       <h2>{entry.title}</h2>
                       {/* <div>{entry.content.map(item => item)}</div> */}
                       <p>
@@ -43,12 +45,12 @@ const EntryCard = props => {
               </div>
             </section>
 
-            <section className="secondary">
-              <h2>Secondary</h2>
-              <div className="cards">
+            <section className="codex-secondary">
+              <h2 className="titles">Secondary</h2>
+              <div className="codex-entries">
                 {secondary.map(entry => {
                   return (
-                    <div key={entry._id}>
+                    <div key={entry._id} className="codex-entry">
                       <h2>{entry.title}</h2>
                       {/* <div>{entry.content.map(item => item)}</div> */}
                       <p>
@@ -67,12 +69,12 @@ const EntryCard = props => {
 
         return (
           <>
-            <section className="secondary">
-              <h2>Secondary</h2>
-              <div className="cards">
+            <section className="codex-secondary">
+              <h2 className="titles">Secondary</h2>
+              <div className="codex-entries">
                 {secondary.map(entry => {
                   return (
-                    <div key={entry._id}>
+                    <div key={entry._id} className="codex-entry">
                       <h2>{entry.title}</h2>
                       {/* <div>{entry.content.map(item => item)}</div> */}
                       <p>
@@ -83,12 +85,12 @@ const EntryCard = props => {
                 })}
               </div>
             </section>
-            <section className="primary">
-              <h2>Primary</h2>
-              <div className="cards">
+            <section className="codex-primary">
+              <h2 className="titles">Primary</h2>
+              <div className="codex-entries">
                 {primary.map(entry => {
                   return (
-                    <div key={entry._id}>
+                    <div key={entry._id} className="codex-entry">
                       <h2>{entry.title}</h2>
                       {/* <div>{entry.content.map(item => item)}</div> */}
                       <p>
@@ -110,12 +112,12 @@ const EntryCard = props => {
         const entries = subject.subjectEntries
         // console.log(entries)
         return (
-          <section key={subject.id}>
-            <h2>{name}</h2>
-            <div>
+          <div className="codex-subject">
+            <h2 className="titles">{name}</h2>
+            <div className="codex-entries">
               {entries.map(entry => {
                 return (
-                  <div key={entry._id}>
+                  <div key={entry._id} className="codex-entry" data-name={entry.title}>
                     <h2>{entry.title}</h2>
                     {/* <div>{entry.content.map(item => item)}</div> */}
                     <p>
@@ -125,21 +127,25 @@ const EntryCard = props => {
                 )
               })}
             </div>
-          </section>
-        )
-      })
-    } else {
-      return updatedEntries.map(entry => {
-        return (
-          <div key={entry._id}>
-            <h2>{entry.title}</h2>
-            {/* <div>{entry.content.map(item => item)}</div> */}
-            <p>
-              {entry.subject.name} | {entry.category.name}
-            </p>
           </div>
         )
       })
+    } else {
+      return (
+        <div className="codex-entries">
+          {updatedEntries.map(entry => {
+            return (
+              <div key={entry._id} className="codex-entry">
+                <h2>{entry.title}</h2>
+                {/* <div>{entry.content.map(item => item)}</div> */}
+                <p>
+                  {entry.subject.name} | {entry.category.name}
+                </p>
+              </div>
+            )
+          })}
+        </div>
+      )
     }
   }
 
