@@ -128,10 +128,8 @@ const Entries = props => {
 
   return (
     <main>
-      This is where all of the entries will exist.
-      <div className="wrapper">
+      <div className="codex">
         <div className="sort-select">
-          {/* TODO: This is where the 'sort by' selector will go */}
           <label htmlFor="sort-select">Sort By</label>
           <select id="sort-select" value={selectionValue} onChange={handleOptionSelect}>
             <option value={"all-atoz"}>All (a - z)</option>
@@ -142,7 +140,7 @@ const Entries = props => {
             <option value={"subject-ztoa"}>Subject (z - a)</option>
           </select>
         </div>
-        <article className="entries">
+        <article>
           <EntryCard entries={entries} updatedEntries={currentEntries} />
         </article>
       </div>
