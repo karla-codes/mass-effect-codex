@@ -7,7 +7,6 @@ import Entries from "./Entries"
 const App = () => {
   const [allEntries, setAllEntries] = useState([])
   const [bySubjectEntries, setBySubjectEntries] = useState([])
-  // const [byCategoryEntries, setByCategoryEntries] = useState([])
 
   // Divide all entries and categorize by subject
   const organizeEntries = (entries, listOfSubjects) => {
@@ -49,11 +48,13 @@ const App = () => {
   }, [])
 
   return (
-    <div>
-      <Header />
-      <Search />
+    <>
+      <div className="wrapper">
+        <Header />
+        <Search />
+      </div>
       <Entries allEntries={allEntries} subjects={bySubjectEntries} />
-    </div>
+    </>
   )
 }
 
