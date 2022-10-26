@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react"
+import { Routes, Route } from "react-router-dom"
 import subjects from "../data/subjects"
-import Header from "./Header"
-import Search from "./Search"
-import Entries from "./Entries"
+import Home from "./Home"
+import EntryPage from "./EntryPage"
 
 const App = () => {
   const [allEntries, setAllEntries] = useState([])
@@ -48,13 +48,10 @@ const App = () => {
   }, [])
 
   return (
-    <>
-      <div className="wrapper">
-        <Header />
-        <Search />
-      </div>
-      <Entries allEntries={allEntries} subjects={bySubjectEntries} />
-    </>
+    <Routes>
+      <Route path="/" element={<Home allEntries={allEntries} subjects={bySubjectEntries} />} />
+      <Route path="entries/:entryTitle" element={<EntryPage />} />
+    </Routes>
   )
 }
 
