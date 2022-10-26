@@ -10,8 +10,10 @@ h1 {
 }
 
 .codex-entries {
-  // color: white;
-  // color: black;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 .codex-subject {
