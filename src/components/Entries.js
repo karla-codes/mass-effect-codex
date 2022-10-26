@@ -1,9 +1,11 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
+import Search from "./Search"
 import EntryCard from "./EntryCard"
 
 const Entries = props => {
   const [selectionValue, setSelectionValue] = useState("")
   const [currentEntries, setCurrentEntries] = useState([])
+
   const entries = props.allEntries
   const { subjects } = props
 
@@ -23,6 +25,7 @@ const Entries = props => {
       })
 
       setCurrentEntries(sortedAtoZ)
+      return sortedAtoZ
     } else if (option === "all-ztoa") {
       // display ALL entries in reverse alphabetical order
       const sortedZtoA = entries.sort((a, b) => {
@@ -38,6 +41,7 @@ const Entries = props => {
       })
 
       setCurrentEntries(sortedZtoA)
+      return sortedZtoA
     } else if (option === "category-first" || option === "category-last") {
       // display all entries by Category (first - last)
       const primaryEntries = []
@@ -68,6 +72,7 @@ const Entries = props => {
         })
 
         setCurrentEntries(sortedCategoryFirst)
+        return sortedCategoryFirst
       } else {
         const sortedCategoryLast = [secondaryEntries, primaryEntries]
 
@@ -85,6 +90,7 @@ const Entries = props => {
         })
 
         setCurrentEntries(sortedCategoryLast)
+        return sortedCategoryLast
       }
     } else if (option === "subject-atoz") {
       // display all entries by Subject (a - z)
@@ -101,6 +107,7 @@ const Entries = props => {
       })
 
       setCurrentEntries(subjects)
+      return subjects
     } else if (option === "subject-ztoa") {
       // display all entries by Subject (z - a)
       subjects.sort((a, b) => {
@@ -116,18 +123,32 @@ const Entries = props => {
       })
 
       setCurrentEntries(subjects)
+      return subjects
     }
   }
 
   const handleOptionSelect = e => {
     const selectValue = e.target.value
     setSelectionValue(selectValue)
-    setEntryOrder(selectValue)
-    // console.log(selectValue)
+    const entries = setEntryOrder(selectValue)
+
+    // save selection and current entries to session storage
+    sessionStorage.setItem("selectionValue", JSON.stringify(selectValue))
+    sessionStorage.setItem("updatedEntries", JSON.stringify(entries))
   }
+
+  useEffect(() => {
+    const currentEntries = sessionStorage.getItem("updatedEntries")
+    const currentSelectionValue = sessionStorage.getItem("selectionValue")
+    if (currentEntries && currentSelectionValue) {
+      setCurrentEntries(JSON.parse(currentEntries))
+      setSelectionValue(JSON.parse(currentSelectionValue))
+    }
+  }, [])
 
   return (
     <main>
+      <Search />
       <div className="codex">
         <div className="sort-select">
           <label htmlFor="sort-select">Sort By</label>
@@ -141,7 +162,11 @@ const Entries = props => {
           </select>
         </div>
         <article>
-          <EntryCard entries={entries} updatedEntries={currentEntries} />
+          <EntryCard
+            entries={entries}
+            updatedEntries={currentEntries}
+            selectionValue={selectionValue}
+          />
         </article>
       </div>
     </main>
