@@ -2,8 +2,8 @@ import React from "react"
 
 const Header = () => {
   return (
-    <header>
-      <h1>Mass Effect Codex</h1>
+    <header id="main">
+      <h1 className="title">Mass Effect Codex</h1>
       <p>
         Welcome to my Mass Effect Codex project! Here you’ll find codex entries from all three Mass
         Effect games (minus the entries from the DLCs).
