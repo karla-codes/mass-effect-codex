@@ -152,14 +152,16 @@ const Entries = props => {
       <div className="codex">
         <div className="sort-select">
           <label htmlFor="sort-select">Sort By</label>
-          <select id="sort-select" value={selectionValue} onChange={handleOptionSelect}>
-            <option value={"all-atoz"}>All (a - z)</option>
-            <option value={"all-ztoa"}>All (z - a)</option>
-            <option value={"category-first"}>Category (First)</option>
-            <option value={"category-last"}>Category (Last)</option>
-            <option value={"subject-atoz"}>Subject (a - z)</option>
-            <option value={"subject-ztoa"}>Subject (z - a)</option>
-          </select>
+          <div className="select">
+            <select id="sort-select" value={selectionValue} onChange={handleOptionSelect}>
+              <option value={"all-atoz"}>All (a - z)</option>
+              <option value={"all-ztoa"}>All (z - a)</option>
+              <option value={"category-first"}>Category (First)</option>
+              <option value={"category-last"}>Category (Last)</option>
+              <option value={"subject-atoz"}>Subject (a - z)</option>
+              <option value={"subject-ztoa"}>Subject (z - a)</option>
+            </select>
+          </div>
         </div>
         <article>
           <EntryCard
