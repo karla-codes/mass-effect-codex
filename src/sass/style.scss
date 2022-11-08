@@ -1,2 +1,4 @@
-@import "global";
-@import "layout";
+@use "config";
+@use "global";
+@use "layout";
+@use "components";
