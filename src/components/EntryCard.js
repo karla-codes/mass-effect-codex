@@ -11,7 +11,12 @@ const EntryCard = props => {
       return (
         <div className="codex-entries">
           {entries.map(entry => {
-            const entryTitle = entry.title.toLowerCase().split(" ").join("-").replace(":", "")
+            const entryTitle = entry.title
+              .toLowerCase()
+              .split(" ")
+              .join("-")
+              .replace(":", "")
+              .replace("/", "-")
             const entryLink = `/entries/${entryTitle}`
             return (
               <Link
