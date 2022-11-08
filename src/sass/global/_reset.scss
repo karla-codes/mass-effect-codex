@@ -45,11 +45,28 @@ html:focus-within {
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
+  overflow-y: scroll;
 
   // 🔶 set base font family
   line-height: 1.4;
   font-size: 16px;
   font-family: "Roboto Mono", monospace;
+}
+
+/* select reset using Stephanie Eckles' tutorial: https://moderncss.dev/custom-select-styles-with-pure-css/ */
+
+select {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0 1em 0 0;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  outline: none;
 }
 
 /* A elements that don't have a class get default styles */
