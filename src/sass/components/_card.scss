@@ -1,0 +1,12 @@
+.codex-entry {
+  flex: 1 1 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgb(var(--color-container-border));
+  border-radius: 10px;
+  background-color: rgba(var(--color-container-primary), var(--o-container-primary));
+  box-shadow: inset 0 0 40px 0 rgba(var(--color-container-shadow), var(--o-container-shadow));
+  padding: 2em;
+  min-height: 28ch;
+}
