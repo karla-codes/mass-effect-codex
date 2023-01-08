@@ -50,7 +50,7 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Home allEntries={allEntries} subjects={bySubjectEntries} />} />
-      <Route path="entries/:entryTitle" element={<EntryPage />} />
+      <Route path="entries/:entryId" element={<EntryPage />} />
     </Routes>
   )
 }
