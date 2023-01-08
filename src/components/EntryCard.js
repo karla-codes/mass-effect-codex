@@ -1,3 +1,4 @@
+/* eslint-disable no-lone-blocks */
 import React from "react"
 import { Link } from "react-router-dom"
 
@@ -11,20 +12,16 @@ const EntryCard = props => {
       return (
         <div className="codex-entries">
           {entries.map(entry => {
-            const entryTitle = entry.title
-              .toLowerCase()
-              .split(" ")
-              .join("-")
-              .replace(":", "")
-              .replace("/", "-")
-            const entryLink = `/entries/${entryTitle}`
+            const entryId = entry._id
+
+            const entryLink = `/entries/${entryId}`
             return (
               <Link
                 to={entryLink}
                 state={{ entry: entry }}
                 className="codex-entry"
-                id={entry._id}
-                key={entry._id}
+                id={entryId}
+                key={entryId}
                 onClick={() => {
                   sessionStorage.setItem("updatedEntries", JSON.stringify(entries))
                   sessionStorage.setItem("selectionValue", JSON.stringify(selectionValue))
@@ -50,15 +47,15 @@ const EntryCard = props => {
               <h2 className="titles">Primary</h2>
               <div className="codex-entries">
                 {primary.map(entry => {
-                  const entryTitle = entry.title.toLowerCase().split(" ").join("-").replace(":", "")
-                  const entryLink = `/entries/${entryTitle}`
+                  const entryId = entry._id
+                  const entryLink = `/entries/${entryId}`
                   return (
                     <Link
                       to={entryLink}
                       state={{ entry: entry }}
                       className="codex-entry"
-                      id={entry._id}
-                      key={entry._id}
+                      id={entryId}
+                      key={entryId}
                       onClick={() => {
                         sessionStorage.setItem("updatedEntries", JSON.stringify(updatedEntries))
                         sessionStorage.setItem("selectionValue", JSON.stringify(selectionValue))
@@ -78,15 +75,15 @@ const EntryCard = props => {
               <h2 className="titles">Secondary</h2>
               <div className="codex-entries">
                 {secondary.map(entry => {
-                  const entryTitle = entry.title.toLowerCase().split(" ").join("-").replace(":", "")
-                  const entryLink = `/entries/${entryTitle}`
+                  const entryId = entry._id
+                  const entryLink = `/entries/${entryId}`
                   return (
                     <Link
                       to={entryLink}
                       state={{ entry: entry }}
                       className="codex-entry"
-                      id={entry._id}
-                      key={entry._id}
+                      id={entryId}
+                      key={entryId}
                       onClick={() => {
                         sessionStorage.setItem("updatedEntries", JSON.stringify(updatedEntries))
                         sessionStorage.setItem("selectionValue", JSON.stringify(selectionValue))
@@ -113,15 +110,15 @@ const EntryCard = props => {
               <h2 className="titles">Secondary</h2>
               <div className="codex-entries">
                 {secondary.map(entry => {
-                  const entryTitle = entry.title.toLowerCase().split(" ").join("-").replace(":", "")
-                  const entryLink = `/entries/${entryTitle}`
+                  const entryId = entry._id
+                  const entryLink = `/entries/${entryId}`
                   return (
                     <Link
                       to={entryLink}
                       state={{ entry: entry }}
                       className="codex-entry"
-                      id={entry._id}
-                      key={entry._id}
+                      id={entryId}
+                      key={entryId}
                       onClick={() => {
                         sessionStorage.setItem("updatedEntries", JSON.stringify(updatedEntries))
                         sessionStorage.setItem("selectionValue", JSON.stringify(selectionValue))
@@ -140,15 +137,15 @@ const EntryCard = props => {
               <h2 className="titles">Primary</h2>
               <div className="codex-entries">
                 {primary.map(entry => {
-                  const entryTitle = entry.title.toLowerCase().split(" ").join("-").replace(":", "")
-                  const entryLink = `/entries/${entryTitle}`
+                  const entryId = entry._id
+                  const entryLink = `/entries/${entryId}`
                   return (
                     <Link
                       to={entryLink}
                       state={{ entry: entry }}
                       className="codex-entry"
-                      id={entry._id}
-                      key={entry._id}
+                      id={entryId}
+                      key={entryId}
                       onClick={() => {
                         sessionStorage.setItem("updatedEntries", JSON.stringify(updatedEntries))
                         sessionStorage.setItem("selectionValue", JSON.stringify(selectionValue))
@@ -177,15 +174,15 @@ const EntryCard = props => {
             <h2 className="titles">{name}</h2>
             <div className="codex-entries">
               {entries.map(entry => {
-                const entryTitle = entry.title.toLowerCase().split(" ").join("-").replace(":", "")
-                const entryLink = `/entries/${entryTitle}`
+                const entryId = entry._id
+                const entryLink = `/entries/${entryId}`
                 return (
                   <Link
                     to={entryLink}
                     state={{ entry: entry }}
                     className="codex-entry"
-                    id={entry._id}
-                    key={entry._id}
+                    id={entryId}
+                    key={entryId}
                     onClick={() => {
                       sessionStorage.setItem("updatedEntries", JSON.stringify(updatedEntries))
                       sessionStorage.setItem("selectionValue", JSON.stringify(selectionValue))
@@ -206,15 +203,15 @@ const EntryCard = props => {
       return (
         <div className="codex-entries">
           {updatedEntries.map(entry => {
-            const entryTitle = entry.title.toLowerCase().split(" ").join("-").replace(":", "")
-            const entryLink = `/entries/${entryTitle}`
+            const entryId = entry._id
+            const entryLink = `/entries/${entryId}`
             return (
               <Link
                 to={entryLink}
                 state={{ entry: entry }}
                 className="codex-entry"
-                id={entry._id}
-                key={entry._id}
+                id={entryId}
+                key={entryId}
                 onClick={() => {
                   sessionStorage.setItem("updatedEntries", JSON.stringify(updatedEntries))
                   sessionStorage.setItem("selectionValue", JSON.stringify(selectionValue))
