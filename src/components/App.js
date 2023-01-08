@@ -28,7 +28,7 @@ const App = () => {
 
   useEffect(() => {
     // GET all entries
-    fetch("http://localhost:5500/api/entries/all")
+    fetch(`${process.env.API_URL}/api/entries/all`)
       .then(res => res.json())
       .then(data => {
         const sortedData = data.sort((a, b) => {
