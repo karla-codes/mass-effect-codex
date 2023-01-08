@@ -148,7 +148,7 @@ const Entries = props => {
 
   return (
     <main>
-      <Search />
+      {/* <Search /> */}
       <div className="codex">
         <div className="sort-select">
           <label htmlFor="sort-select">Sort By</label>
