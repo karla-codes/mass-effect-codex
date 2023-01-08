@@ -16,10 +16,8 @@ const EntryPage = () => {
       <nav className="entry-nav">
         <ul>
           <li>
-            <button onClick={() => navigate(-1)}>Back to Entries</button>
-          </li>
-          <li>
-            <button>Random Entry</button>
+            {/* TODO: update button arrow */}
+            <button onClick={() => navigate(-1)}>⃪ Back to Entries</button>
           </li>
         </ul>
       </nav>
