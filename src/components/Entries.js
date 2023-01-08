@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react"
-import Search from "./Search"
 import EntryCard from "./EntryCard"
 
 const Entries = props => {
@@ -148,7 +147,6 @@ const Entries = props => {
 
   return (
     <main>
-      {/* <Search /> */}
       <div className="codex">
         <div className="sort-select">
           <label htmlFor="sort-select">Sort By</label>
