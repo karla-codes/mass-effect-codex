@@ -1,0 +1,2 @@
+# API Proxy
+/api/* https://mass-effect-api.fly.dev/:splat 200
