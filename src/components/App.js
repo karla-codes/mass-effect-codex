@@ -28,7 +28,7 @@ const App = () => {
 
   useEffect(() => {
     // GET all entries
-    fetch(`${process.env.REACT_APP_API_URL}/api/entries/all`)
+    fetch(`${process.env.REACT_APP_API_URL}/api/entries/all`, { mode: "no-cors" })
       .then(res => res.json())
       .then(data => {
         const sortedData = data.sort((a, b) => {
