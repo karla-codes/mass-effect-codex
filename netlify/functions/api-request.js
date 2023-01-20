@@ -1,5 +1,5 @@
 const fetch = require("node-fetch")
-const API_URL = `${process.env.REACT_APP_API_URL}/api/entries/all`
+const API_URL = `https://mass-effect-api.fly.dev/api/entries/all`
 
 exports.handler = async () => {
   let response
