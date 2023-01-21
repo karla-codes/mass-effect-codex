@@ -29,8 +29,8 @@ const App = () => {
   useEffect(() => {
     // GET all entries
     // fetch(`${process.env.REACT_APP_API_URL}/api/entries/all`)
-    //   .then(res => res.json())
-    fetch("/netlify/functions/api-request")
+    // .then(res => res.json())
+    fetch("./netlify/functions/api-request")
       .then(data => {
         const sortedData = data.sort((a, b) => {
           if (a.title < b.title) {
