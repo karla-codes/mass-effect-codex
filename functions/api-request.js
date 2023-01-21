@@ -1,14 +1,14 @@
-import fetch from "node-fetch"
+// import fetch from "node-fetch"
 
-export async function handler(event, context) {
-  const API_URL = `https://mass-effect-api.fly.dev/api/entries/all`
-  const response = await fetch(API_URL)
-  const data = await response.json()
+// export async function handler(event, context) {
+//   const API_URL = `https://mass-effect-api.fly.dev/api/entries/all`
+//   const response = await fetch(API_URL)
+//   const data = await response.json()
 
-  console.log(data)
+//   console.log(data)
 
-  return {
-    statusCode: 200,
-    body: JSON.stringify(data),
-  }
-}
+//   return {
+//     statusCode: 200,
+//     body: JSON.stringify(data),
+//   }
+// }
