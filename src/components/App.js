@@ -28,9 +28,8 @@ const App = () => {
 
   useEffect(() => {
     // GET all entries
-    // fetch(`${process.env.REACT_APP_API_URL}/api/entries/all`)
-    // .then(res => res.json())
-    fetch("/.netlify/functions/api-request")
+    fetch("/api/entries/all")
+      .then(res => res.json())
       .then(data => {
         console.log(data)
         const sortedData = data.sort((a, b) => {
