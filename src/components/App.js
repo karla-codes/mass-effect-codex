@@ -32,6 +32,7 @@ const App = () => {
     // .then(res => res.json())
     fetch("/.netlify/functions/api-request")
       .then(data => {
+        console.log(data)
         const sortedData = data.sort((a, b) => {
           if (a.title < b.title) {
             return -1
