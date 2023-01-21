@@ -1,6 +1,6 @@
-const fetch = require("node-fetch")
+import fetch from "node-fetch"
 
-exports.handler = async () => {
+export async function handler() {
   const API_URL = `https://mass-effect-api.fly.dev/api/entries/all`
   const response = await fetch(API_URL)
   const data = await response.json()
