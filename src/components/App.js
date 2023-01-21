@@ -28,7 +28,11 @@ const App = () => {
 
   useEffect(() => {
     // GET all entries
-    fetch(`${process.env.REACT_APP_API_URL}/api/entries/all`)
+    fetch(`${process.env.REACT_APP_API_URL}/api/entries/all`, {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      },
+    })
       .then(res => res.json())
       .then(data => {
         console.log(data)
