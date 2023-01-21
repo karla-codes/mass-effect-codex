@@ -1,2 +1,20 @@
 [build]
   functions = "functions"
+
+[[redirects]]
+  from = "/api/*"
+  to = "https://mass-effect-api.fly.dev/:splat"
+  status = 200
+  force = true
+  
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+
+[[headers]]
+  for = "/*"
+    
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
