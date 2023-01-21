@@ -28,7 +28,7 @@ const App = () => {
 
   useEffect(() => {
     // GET all entries
-    fetch("/api/entries/all")
+    fetch(`${process.env.REACT_APP_API_URL}/api/entries/all`)
       .then(res => res.json())
       .then(data => {
         console.log(data)
