@@ -5,6 +5,8 @@ exports.handler = async () => {
   const response = await fetch(API_URL)
   const data = await response.json()
 
+  console.log(data)
+
   return {
     statusCode: 200,
     body: JSON.stringify(data),
