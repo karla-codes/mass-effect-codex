@@ -30,7 +30,6 @@ const App = () => {
     // GET all entries
     fetch(`${process.env.REACT_APP_API_URL}/api/entries/all`, {
       headers: {
-        "Access-Control-Allow-Origin": "*",
         "Content-Type": "application/json",
       },
     })
