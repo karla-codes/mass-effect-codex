@@ -149,7 +149,7 @@ const Entries = props => {
     <main>
       <div className="codex">
         <div className="sort-select">
-          <label htmlFor="sort-select">Sort By</label>
+          <label htmlFor="sort-select">Sort By:</label>
           <div className="select">
             <select id="sort-select" value={selectionValue} onChange={handleOptionSelect}>
               <option value={"all-atoz"}>All (a - z)</option>
