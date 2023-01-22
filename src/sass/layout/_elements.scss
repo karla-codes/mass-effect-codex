@@ -20,6 +20,11 @@ header {
   }
 }
 
+span {
+  font-weight: bold;
+  color: rgb(var(--color-text-bold));
+}
+
 .title {
   max-width: 6ch;
 }
@@ -68,8 +73,8 @@ select,
   .sort-select {
     display: flex;
     flex-direction: column;
+    margin: 4rem auto;
     margin-bottom: 4.6rem;
-    margin-left: auto;
     width: 100%;
 
     @media screen and (min-width: 1480px) {
